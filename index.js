@@ -9,7 +9,6 @@ function validation() {
     if (email.match(patternEmail)) {
         emailHelp.innerHTML = "Your email address is valid";
         emailHelp.style.color = "#41a739"
-        
     }
     else {
         emailHelp.innerHTML = "Please enter valid email address";
@@ -27,7 +26,6 @@ function validationMobile() {
     if (mobile.match(patternMobile)) {
         mobilelHelp.innerHTML = "Your mobile number is valid";
         mobilelHelp.style.color = "#41a739"
-        // btnMobile.disabled = false;
     }
     else {
         mobileHelp.innerHTML = "Please enter mobile number in format +381 612345678";
