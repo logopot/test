@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap&subset=latin-ext" rel="stylesheet">
+        <!-- Custom css -->
+        <link rel="stylesheet" href="index.css" >
+        <title>Test</title>
+    </head>
+    <body>
+
+        <div class="container-fluid test d-flex justify-content-center align-items-center"">
+            <div class="container bg-white pt-5 px-5 shadow-lg container-form">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img src="images/flower.jpg" alt="flower" />
+                    </div>
+
+                    <div class="col-md-7">
+                        <div id="showme" style="display: none;">
+                            <div class = "success--text">
+                                <h2>Great!</h2>
+                                <h4>You can log in now.</h4>
+                            </div>
+                        </div>
+                        <div id="loadingGif" style="display:none"><img src="images/original.gif"></div>
+                        
+                        <ul class="nav nav-tabs nav-tabs--test" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link--test active" id="email-tab" data-toggle="tab" href="#email" role="tab" aria-controls="email" aria-selected="false">Email</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link--test" id="mobile-tab" data-toggle="tab" href="#mobile" role="tab" aria-controls="mobile" aria-selected="true">Mobile</a>
+                            </li>   
+                        </ul>
+                        <div class="tab-content" id="myTabContent">                       
+                            <div class="tab-pane fade show active" id="email" role="tabpanel" aria-labelledby="email-tab">
+                                <form class="pt-5" id = "formEmail" method="POST" action="#" onsubmit="return false;" autocomplete="off">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-lg" id="js-formControlInput-email" placeholder="name@example.com" onkeydown="validation()" required>
+                                        <small id="emailHelp" class="form-text"></small>
+                                    </div>
+
+                                    <div class="form-group py-3">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="rsd" required>
+                                            <label class="form-check-label" for="inlineRadio1">RSD</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="eur" required>
+                                            <label class="form-check-label" for="inlineRadio2">EUR</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="form-check pb-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkTerms" onclick="check()" required>
+                                            <label class="form-check-label" for="checkTerms">
+                                                Agree to <a href = "/" class = "nav-link--test" target = "_blank">terms and conditions</a>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkPromo">
+                                            <label class="form-check-label" for="checkPromo">
+                                                Receive newsletter with promo
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" id = "btnEmail" class="btn btn--test mt-3 mb-5" onclick="showDiv()" disabled>Register</button>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="mobile" role="tabpanel" aria-labelledby="mobile-tab">
+                                <form class="pt-5" id = "formMobile"  method="POST" action="#" onsubmit="return false;" autocomplete="off">
+                                    <div class="form-group">
+                                        <input type="tel" name="phone" class="form-control form-control-lg" id="js-formControlInput-mobile" placeholder="+381 623456789" onkeydown="validationMobile()" required>
+                                        <small id="mobileHelp" class="form-text"></small>
+                                    </div>
+
+                                    <div class="form-group py-3">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="rsd" required>
+                                            <label class="form-check-label" for="inlineRadio1">RSD</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="eur" required>
+                                            <label class="form-check-label" for="inlineRadio2">EUR</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="form-check pb-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkTerms" onclick="check()" required>
+                                            <label class="form-check-label" for="checkTerms">
+                                                Agree to <a href = "/" class = "nav-link--test" target = "_blank">terms and conditions</a>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkPromo">
+                                            <label class="form-check-label" for="checkPromo">
+                                                Receive SMS with promo
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" id = "btnMobile" class="btn btn--test mt-3 mb-5" onclick="showDiv()" disabled>Register</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!-- Custom JS -->
+        <script src="index.js"></script>
+    </body>
+</html>
